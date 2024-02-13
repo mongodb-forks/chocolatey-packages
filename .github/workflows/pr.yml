@@ -1,0 +1,20 @@
+---
+name: Test Packages
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+jobs:
+  updateall:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - run: choco install -y au
+      - run: ./test_all.ps1
+        env:
+          gist_id: 401de57398b774a70ad4dc5d46aab760
+          github_user_repo: ${{ env.GITHUB_REPOSITORY }}
+          github_api_key: ${{ secrets.GH_TOKEN_WITH_GIST }}
+          api_key: ${{ secrets.CHOCO_API_KEY }}
