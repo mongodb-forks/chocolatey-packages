@@ -30,6 +30,8 @@ jobs:
           New-Item $profilePath -ItemType Directory
           $profileInstall | Out-File $profile
           ./setup/au_setup.ps1
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
       - run: ./update_all.ps1
         shell: powershell
         env:
