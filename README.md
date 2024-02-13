@@ -1,13 +1,7 @@
 # Chocolatey Packages
 
-~~~
-<!-- EDIT ME-->
-
-[![](https://ci.appveyor.com/api/projects/status/github/YOUR_GITHUB_USERNAME_HERE/chocolatey-packages?svg=true)](https://ci.appveyor.com/project/YOUR_GITHUB_USERNAME_HERE/chocolatey-packages)
-[Update status](https://gist.github.com/YOUR_GITHUB_USERNAME_HERE/YOUR_GIST_ID)
-
-<!-- REMOVE THE squiggles "~" surrounding this (this should not be a code block) -->
-~~~
+[![Run Updates](https://github.com/mongodb-forks/chocolatey-packages/actions/workflows/run.yml/badge.svg)](https://github.com/mongodb-forks/chocolatey-packages/actions/workflows/run.yml)
+[Update status](https://gist.github.com/fmenezes/401de57398b774a70ad4dc5d46aab760)
 
 ## Chocolatey Packages Template
 
