@@ -2,8 +2,8 @@
 name: Run Updates
 on:
   push:
-    branches:
-      - master
+    # branches:
+    #   - master
   schedule:
     - cron: "0 16 * * 1-5"
 permissions: 
@@ -36,10 +36,5 @@ jobs:
           github_user_repo: ${{ env.GITHUB_REPOSITORY }}
           github_api_key: ${{ secrets.GITHUB_TOKEN }}
           api_key: ${{ secrets.CHOCO_API_KEY }}
-      - uses: actions/upload-artifact@v4
-        with:
-          name: run
-          path: |
-            update_info.xml
-            Update-AUPackages.md
-            Update-History.md
+      - run: |
+          Get-Content -Path "Update-AUPackages.md" | Out-File -FilePath "$env:GITHUB_STEP_SUMMARY" -Append
