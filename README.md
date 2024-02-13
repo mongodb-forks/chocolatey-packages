@@ -1,7 +1,6 @@
 # Chocolatey Packages
 
 [![Run Updates](https://github.com/mongodb-forks/chocolatey-packages/actions/workflows/run.yml/badge.svg)](https://github.com/mongodb-forks/chocolatey-packages/actions/workflows/run.yml)
-[Update status](https://gist.github.com/fmenezes/401de57398b774a70ad4dc5d46aab760)
 
 ## Chocolatey Packages Template
 
