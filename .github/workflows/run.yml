@@ -2,8 +2,8 @@
 name: Run Updates
 on:
   push:
-    # branches:
-    #   - master
+    branches:
+      - master
   schedule:
     - cron: "0 16 * * 1-5"
 permissions: 
@@ -38,10 +38,8 @@ jobs:
           api_key: ${{ secrets.CHOCO_API_KEY }}
       - uses: actions/upload-artifact@v4
         with:
-          path: update_info.xml
-      - uses: actions/upload-artifact@v4
-        with:
-          path: Update-AUPackages.md
-      - uses: actions/upload-artifact@v4
-        with:
-          path: Update-History.md
+          name: run
+          path: |
+            update_info.xml
+            Update-AUPackages.md
+            Update-History.md
