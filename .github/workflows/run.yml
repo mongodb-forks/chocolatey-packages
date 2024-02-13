@@ -2,8 +2,8 @@
 name: Run Updates
 on:
   push:
-    branches:
-      - master
+    # branches:
+    #   - master
   schedule:
     - cron: "0 16 * * 1-5"
 permissions: 
@@ -33,7 +33,13 @@ jobs:
         shell: powershell
         env:
           au_Push: true
-          gist_id: 401de57398b774a70ad4dc5d46aab760
           github_user_repo: ${{ env.GITHUB_REPOSITORY }}
-          github_api_key: ${{ secrets.GH_TOKEN_WITH_GIST }}
+          github_api_key: ${{ secrets.GITHUB_TOKEN }}
           api_key: ${{ secrets.CHOCO_API_KEY }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: run
+          path: |
+            update_info.xml
+            Update-AUPackages.md
+            Update-History.md
