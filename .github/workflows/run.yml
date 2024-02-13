@@ -14,8 +14,23 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - run: choco install -y au
+      - name: setup
+        shell: powershell
+        run: |
+          $profileInstall = @'
+          # Chocolatey profile
+          $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+          if (Test-Path($ChocolateyProfile)) {
+              Import-Module "$ChocolateyProfile"
+          }
+          '@
+
+          $profilePath = Split-Path -parent $profile 
+          New-Item $profilePath -ItemType Directory
+          $profileInstall | Out-File $profile
+          ./setup/au_setup.ps1
       - run: ./update_all.ps1
+        shell: powershell
         env:
           au_Push: true
           gist_id: 401de57398b774a70ad4dc5d46aab760
