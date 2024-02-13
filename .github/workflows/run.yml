@@ -2,10 +2,11 @@
 name: Run Updates
 on:
   push:
-    # branches:
-    #   - master
+    branches:
+      - master
   schedule:
     - cron: "0 16 * * 1-5"
+  workflow_dispatch:
 permissions: 
     contents: write
 jobs:
