@@ -24,26 +24,9 @@ $Options = [ordered]@{
         }
     }
 
-    History = @{
-        Lines = 30                                          #Number of lines to show
-        Github_UserRepo = $Env:github_user_repo             #User repo to be link to commits
-        Path = "$PSScriptRoot\Update-History.md"            #Path where to save history
-    }
-
-    Gist = @{
-        Id     = $Env:gist_id                               #Your gist id; leave empty for new private or anonymous gist
-        ApiKey = $Env:github_api_key                        #Your github api key - if empty anoymous gist is created
-        Path   = "$PSScriptRoot\Update-AUPackages.md", "$PSScriptRoot\Update-History.md"       #List of files to add to the gist
-    }
-
     Git = @{
         User     = ''                                       #Git username, leave empty if github api key is used
         Password = $Env:github_api_key                      #Password if username is not empty, otherwise api key
-    }
-
-    RunInfo = @{
-        Exclude = 'password', 'apikey'                      #Option keys which contain those words will be removed
-        Path    = "$PSScriptRoot\update_info.xml"           #Path where to save the run info
     }
 
     Mail = if ($Env:mail_user) {
