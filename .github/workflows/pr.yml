@@ -3,7 +3,7 @@ name: Test Packages
 on:
   pull_request:
 jobs:
-  updateall:
+  testall:
     runs-on: windows-latest
     steps:
       - name: Checkout repository
