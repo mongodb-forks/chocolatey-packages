@@ -33,13 +33,6 @@ $options = [ordered]@{
             UserMessage = "[Update report](https://gist.github.com/$Env:gist_id) | **USING AU NEXT VERSION**"       #  Markdown, Text: Custom user message to show
         }
     }
-
-    Gist = @{
-        Id     = $Env:gist_id_test                          #Your gist id; leave empty for new private or anonymous gist
-        ApiKey = $Env:github_api_key                        #Your github api key - if empty anoymous gist is created
-        Path   = "$PSScriptRoot\Update-Force-Test-${n}.md"       #List of files to add to the gist
-        Description = "Update Force Test Report #powershell #chocolatey"
-    }
 }
 
 
