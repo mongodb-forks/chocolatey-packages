@@ -29,7 +29,5 @@ jobs:
         shell: powershell
         env:
           github_user_repo: ${{ env.GITHUB_REPOSITORY }}
-          github_api_key: ${{ secrets.GH_TOKEN_WITH_GIST }}
-          api_key: ${{ secrets.CHOCO_API_KEY }}
       - run: |
           Get-Content -Path "Update-Force-Test-.md" | Out-File -FilePath "$env:GITHUB_STEP_SUMMARY" -Append
