@@ -1,13 +1,9 @@
 ---
-name: Run Updates
+name: Test Packages
 on:
-  schedule:
-    - cron: "0 16 * * 1-5"
-  workflow_dispatch:
-permissions: 
-    contents: write
+  pull_request:
 jobs:
-  updateall:
+  testall:
     runs-on: windows-latest
     steps:
       - name: Checkout repository
@@ -29,12 +25,9 @@ jobs:
           ./setup/au_setup.ps1
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
-      - run: ./update_all.ps1
+      - run: ./test_all.ps1
         shell: powershell
         env:
-          au_Push: true
           github_user_repo: ${{ env.GITHUB_REPOSITORY }}
-          github_api_key: ${{ secrets.GITHUB_TOKEN }}
-          api_key: ${{ secrets.CHOCO_API_KEY }}
       - run: |
-          Get-Content -Path "Update-AUPackages.md" | Out-File -FilePath "$env:GITHUB_STEP_SUMMARY" -Append
+          Get-Content -Path "Update-Force-Test-.md" | Out-File -FilePath "$env:GITHUB_STEP_SUMMARY" -Append
