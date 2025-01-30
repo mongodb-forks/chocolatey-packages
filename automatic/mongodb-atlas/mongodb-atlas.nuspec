@@ -4,7 +4,7 @@ enclosed in quotation marks, you should use an editor that supports UTF-8, not t
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
     <metadata>
         <id>mongodb-atlas</id>
-        <version>1.36.0</version>
+        <version>1.37.0</version>
         <owners>MongoDB</owners>
         <title>MongoDB Atlas CLI</title>
         <authors>MongoDB</authors>
