@@ -16,8 +16,8 @@ function global:au_GetLatest {
 
     $url = $download_page | % assets | ? browser_download_url -match 'mongodb-atlas-cli_.*\.msi$' | % browser_download_url | select -First 1
 
-    $version = $url -split '/' | select -Last 1 -Skip 1
-    $version = $version.substring(1)
+    $tag = $url -split '/' | select -Last 1 -Skip 1
+    $version = $tag -replace '^atlascli/', '' -replace '^v', ''
 
     $Latest = @{ URL64 = $url; Version = $version }
     return $Latest
