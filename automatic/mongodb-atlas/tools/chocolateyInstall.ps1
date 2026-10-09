@@ -1,5 +1,5 @@
-﻿$url         = 'https://github.com/mongodb/mongodb-atlas-cli/releases/download/v1.59.1/mongodb-atlas-cli_1.59.1_windows_x86_64.msi'
-$checksum    = 'c09bd82288133cd1533bc698b111dccb766f8b6b50a004063229073f4ffbfd4b'
+﻿$url         = 'https://github.com/mongodb/mongodb-atlas-cli/releases/download/atlascli/v1.59.0/mongodb-atlas-cli_1.59.0_windows_x86_64.msi'
+$checksum    = 'b1f4202a8d3f30d98a7e38b836a6a6eda8a8e3cda9aa31d12669485ba6cbfb44'
 
 $ErrorActionPreference = 'Stop';
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
